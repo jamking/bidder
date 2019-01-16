@@ -1,8 +1,10 @@
 FROM alpine:3.6
 MAINTAINER Ben Faul, https://github.com/benmfaul
-RUN apk --update add openjdk8-jre
+RUN apk --update add openjdk8
+#RUN apk --update add openjdk8-jre
 RUN apk add --no-cache bash
 RUN apk --update add curl
+ENV PATH="/usr/lib/jvm/java-1.8-openjdk/bin/:${PATH}"
 
 RUN mkdir shell
 RUN mkdir www
